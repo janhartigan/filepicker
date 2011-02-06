@@ -4,7 +4,7 @@
  * 
  * @param string	directory (at base)
  * 
- * @return array('success' ? 'files' => array of file info : 'error')
+ * @return array('success' ? 'contents' => array of file info : 'error')
  */
 function getDirectoryContents($folder = '')
 {
