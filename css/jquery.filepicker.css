@@ -1,0 +1,70 @@
+.fp-file-picker {
+	display:none;
+	position:absolute;
+	z-index:9999;
+	background-color:#fff;
+	border-bottom-left-radius: 0.6em !important;
+	border-bottom-right-radius: 0.6em !important;
+	-webkit-border-bottom-left-radius: 0.6em !important;
+	-webkit-border-bottom-right-radius: 0.6em !important;
+	-moz-border-bottom-left-radius: 0.6em !important;
+	-moz-border-bottom-right-radius: 0.6em !important;
+	-moz-box-shadow: 0px 2px 5px #333 !important;
+	-webkit-box-shadow: 0px 2px 5px #333 !important;
+	box-shadow: 0px 2px 5px #333 !important;
+	border: 4px solid #aaaaaa !important;
+	overflow:hidden;
+}
+.fp-list-container {
+	overflow-y:auto;
+	overflow-x:auto;
+	border-radius: 0.6em !important;
+	-webkit-border-radius: 0.6em !important;
+	-moz-border-radius: 0.6em !important;
+}
+.fp-pre-loader {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	text-align:center;
+	font-size:18px;
+}
+.fp-item {
+	padding:6px 3px 6px 25px;
+	cursor:pointer;
+}
+.fp-item:hover {
+	background-color:#99adff;
+}
+.fp-file-item {
+	background:#fff url(/images/16px-file.png) no-repeat 5px 6px;
+}
+.fp-directory-item {
+	background:#fff url(/images/16px-folder.png) no-repeat 5px 6px;
+}
+.fp-image-item {
+	background:#fff url(/images/16px-image.png) no-repeat 5px 6px;
+}
+.fp-directory-item-toggle {
+	
+}
+.fp-grad-top {
+	z-index:99999;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	height:6px;
+	background:url(/images/white-gradient-top.png) repeat-x;
+}
+.fp-grad-bottom {
+	z-index:99999;
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	height:6px;
+	background:url(/images/white-gradient-bottom.png) repeat-x;
+}
