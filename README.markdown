@@ -13,7 +13,6 @@ Let's say you have a text input called 'item_image' that looks like this:
 Now if you run this code:
 
 <pre>
-
 $('#item_image').filePicker({
 	dataSource	: '/admin/getdirectory',
 	baseDirectory	: '/images',
@@ -21,7 +20,6 @@ $('#item_image').filePicker({
 		console.log(data);
 	}
 });
-
 </pre>
 
 Your text input 'item_image' will now be a filepicker. The keys here are the dataSource and baseDirectory properties of the options object. This is how the filepicker plugin knows where to look on your server for the directory and file data. In order for the filepicker to work properly, your server needs to return JSON data in this format from the server if the operation succeeded:
