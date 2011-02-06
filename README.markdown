@@ -152,8 +152,8 @@ These are the available settings and callback functions available for the plugin
 	 */
 	baseDirectory		: '',
 	
-	/* If this is set to true, the filepicker will close when you click outside of it. otherwise, you have to close it using the
-	 * close button inside the filepicker or you have to call the closeFilePicker method
+	/* If this is set to true, the filepicker will close when you click outside of it. otherwise, you have to close it 
+	 * using the close button inside the filepicker or you have to call the closeFilePicker method
 	 * bool
 	 */
 	closeOnOutsideClick	: true,
