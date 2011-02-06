@@ -137,7 +137,8 @@ These are the available settings and callback functions available for the plugin
 	 */
 	fadeOutTime			: 60,
 	
-	/* The URI to be used in loading a directory. This URI will be sent a directory as a string and should return a json object
+	/* The URI to be used in loading a directory. This URI will be sent a directory as a string and should return a 
+	 * json object 
 	 * string
 	 */
 	dataSource			: '',
