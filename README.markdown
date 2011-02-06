@@ -65,3 +65,150 @@ While selecting an open directory closes that directory.
 You can do anything with the data passed into the callback functions. For example, I replace the text of the input with the full directory path of the clicked item and (if it's an image) I put a preview of the image directly below the input box. This ends up looking like this:
 
 <img src="https://github.com/janhartigan/filepicker/raw/master/example/filepicker_example_selected_display.png" />
+
+## options
+
+These are the available settings and callback functions available for the plugin:
+
+<pre>
+{	
+	/* If set to true, clicking a file opens a prompt
+	 * bool
+	 */
+	confirmSelection	: true,
+	
+	/* If set to true, selecting a file closes the filePicker
+	 * bool
+	 */
+	closeOnSelectFile	: true,
+	
+	/* The question posed to the user for the confirm
+	 * string
+	 */
+	confirmText			: "Are you sure you want to select this file?",
+	
+	/*
+	 * Whether to align the filepicker to the left or the right edge of the clickable element
+	 */
+	horizontalAlign		: 'right',
+	
+	/* The distance (in pixels) between the bottom edge of the clickable element and the top of the filePicker
+	 * int
+	 */
+	topSpacing			: 0,
+	
+	/* The width of the filePicker
+	 * int
+	 */
+	width				: 400,
+	
+	/* The height of the filePicker
+	 * int
+	 */
+	height				: 300,
+	
+	/* The color (as a CSS color string) of the indentation for nested items
+	 * string
+	 */
+	nestedFolderPaddingColor: '#333',
+	
+	/* The depth (in pixels) for every layer of nesting
+	 * int
+	 */
+	nestDepth			: 15,
+	
+	/* Whether or not to fade the filepicker in (if set to false, it just shows it without a fade)
+	 * bool
+	 */
+	fadeIn				: true,
+	
+	/* Number of milliseconds to fade the filePicker in (if fadeIn is set to true)
+	 * int
+	 */
+	fadeInTime			: 120,
+	
+	/* Whether or not to fade the filepicker out (if set to false, it just hides it without a fade)
+	 * bool
+	 */
+	fadeOut				: true,
+	
+	/* Number of milliseconds to fade the filePicker out (if fadeOut is set to true)
+	 * int
+	 */
+	fadeOutTime			: 60,
+	
+	/* The URI to be used in loading a directory. This URI will be sent a directory as a string and should return a json object
+	 * string
+	 */
+	dataSource			: '',
+	
+	/* The XHR method...POST, GET, PUT, DELETE
+	 * string
+	 */
+	requestMethod		: 'POST',
+	
+	/* Base directory to be used as the highest-level directory that the user cannot go above
+	 * string
+	 */
+	baseDirectory		: '',
+	
+	/* If this is set to true, the filepicker will close when you click outside of it. otherwise, you have to close it using the
+	 * close button inside the filepicker or you have to call the closeFilePicker method
+	 * bool
+	 */
+	closeOnOutsideClick	: true,
+	
+	/* Determines whether or not the root folder shows at the top level
+	 * bool
+	 */
+	showRootFolder		: true,
+	
+	/* The function to run before the filePicker is created when the clickable element is clicked
+	 * function
+	 */
+	onPreOpen			: null,
+	
+	/* The function to run after the filePicker is created when the clickable element is clicked
+	 * function
+	 */
+	onPostOpen			: null,
+	
+	/* The function to run before the filePicker is destroyed
+	 * function
+	 */
+	onPreClose			: null,
+	
+	/* The function to run after the filePicker is destroyed
+	 * function
+	 */
+	onPostClose			: null,
+	
+	/**
+	 * The beforeSelectFolder function runs after a file is selected
+	 * 
+	 * @param object	data => contains the information about the selected file
+	 */
+	beforeSelectFile	: function(data) {},
+	
+	/**
+	 * The afterSelectFolder function runs after a file is selected
+	 * 
+	 * @param object	data => contains the information about the selected file
+	 */
+	afterSelectFile		: function(data) {},
+	
+	/**
+	 * The beforeSelectFolder function runs after a file is selected
+	 * 
+	 * @param object	data => contains the information about the selected directory
+	 */
+	beforeSelectFolder	: function(data) {},
+	
+	/**
+	 * The afterSelectFolder function runs after a file is selected
+	 * 
+	 * @param object	data => contains the information about the selected directory
+	 */
+	afterSelectFolder	: function(data) {}
+}
+</pre>
