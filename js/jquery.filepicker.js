@@ -172,38 +172,30 @@
 			/**
 			 * The beforeSelectFolder function runs after a file is selected
 			 * 
-			 * @param string	fullPath => the full directory path of the file
-			 * @param string	fileName => only the filename
-			 * @param string	extension => the extension of the file (in lower case)
+			 * @param object	data => contains the information about the selected file
 			 */
-			beforeSelectFile	: function(fullPath, fileName, extension) {},
+			beforeSelectFile	: function(data) {},
 			
 			/**
 			 * The afterSelectFolder function runs after a file is selected
 			 * 
-			 * @param string	fullPath => the full directory path of the file
-			 * @param string	fileName => only the filename
-			 * @param string	extension => the extension of the file (in lower case)
+			 * @param object	data => contains the information about the selected file
 			 */
-			afterSelectFile		: function(fullPath, fileName, extension) {},
+			afterSelectFile		: function(data) {},
 			
 			/**
 			 * The beforeSelectFolder function runs after a file is selected
 			 * 
-			 * @param string	fullPath => the full directory path of the directory
-			 * @param string	directoryName => only the directory name
-			 * @param string	extension => the extension of the file (in lower case)
+			 * @param object	data => contains the information about the selected directory
 			 */
-			beforeSelectFolder	: function(fullPath, fileName, extension) {},
+			beforeSelectFolder	: function(data) {},
 			
 			/**
 			 * The afterSelectFolder function runs after a file is selected
 			 * 
-			 * @param string	fullPath => the full directory path of the directory
-			 * @param string	directoryName => only the directory name
-			 * @param string	extension => the extension of the file (in lower case)
+			 * @param object	data => contains the information about the selected directory
 			 */
-			afterSelectFolder	: function(fullPath, fileName, extension) {}
+			afterSelectFolder	: function(data) {}
 		},
 		
 		/**
@@ -448,7 +440,7 @@
 			if (data.type === 'file') {
 				data.fileType = $item.find('input[name=fileType]').val();
 				
-				this.settings.beforeSelectFile(data);
+				this.settings.beforeSelectFile.call(this.$element, data);
 				
 				//for now just do a simple prompt, eventually give more options like a drop down thing that shows the image
 				if (this.settings.confirmSelection) {
@@ -465,7 +457,7 @@
 			} else if (data.type === 'dir') {
 				data.folderState = $item.siblings().length > 0 ? 'closed' : 'open';
 				
-				this.settings.beforeSelectFolder(data);
+				this.settings.beforeSelectFolder.call(this.$element, data);
 				
 				if (data.folderState == 'open')
 					this.loadDirectoryPath(data.path, $item);
