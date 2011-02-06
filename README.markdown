@@ -4,7 +4,7 @@ filepicker is a jQuery plugin that lets you convert any element into a clickable
 
 <hr />
 
-<div style="font-size:20px"><strong>example</strong></div>
+## example
 
 Let's say you have a text input called 'item_image' that looks like this:
 
