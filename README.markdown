@@ -1,4 +1,4 @@
-<div style="font-size:20px"><strong>filepicker</strong></div>
+# filepicker
 
 filepicker is a jQuery plugin that lets you convert any element into a clickable directory tree manager. When you click the element, a directory tree will show up hovered beneath the clicked element. This directory tree allows you to open up subdirectories or select any file at any level in the tree. Selecting a file calls a user-supplied callback function where you can do with the file information anything you like.
 
