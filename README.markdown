@@ -10,7 +10,7 @@ Let's say you have a text input called 'item_image' that looks like this:
 
 <img src="https://github.com/janhartigan/filepicker/raw/master/example/filepicker_example_empty.png" />
 
-Now if you run this code:
+It doesn't have to be a text input...it could be anything like a button or a div. If you run this code:
 
 <pre>
 $('#item_image').filePicker({
@@ -22,19 +22,49 @@ $('#item_image').filePicker({
 });
 </pre>
 
-Your text input 'item_image' will now be a filepicker. The keys here are the dataSource and baseDirectory properties of the options object. This is how the filepicker plugin knows where to look on your server for the directory and file data. In order for the filepicker to work properly, your server needs to return JSON data in this format from the server if the operation succeeded:
+Your text input 'item_image' will be a filepicker. So how does it get the directory information? The keys are the dataSource and baseDirectory properties of the options object. This is how the filepicker plugin knows where to look on your server for the directory and file data. In order for the filepicker to work properly, your server needs to return JSON data in this format from the server if the operation succeeded:
 
 <pre>
 {
 	'success' : true,
 	'contents': [ //an array
 		{
-			'name'		: 'whatever.png', //the file or directory name
-			'path'		: '/images/whatever.png', //the full path of the file or directory
-			'size'		: 4000, //the file size as an integer
-			'type'		: 'file', //'file' if it's a file, 'dir' if it's a directory
-			'fileType'	: 'image', //the exact type of file (see accepted filetypes section)...false if it's a dir
-			'date'		: '2010-12-12 15:45:00' //any javascript-readable time string that can be passed into the Date() constructor
+			/* The name of the file or directory
+			 *
+			 * string
+			 */
+			'name'		: 'whatever.png',
+			
+			/* The full path with a leading slash starting at your base directory
+			 *
+			 * string
+			 */
+			'path'		: '/images/whatever.png',
+			
+			/* The size of the file as an integer (false if it's a directory)
+			 *
+			 * int / false (if directory)
+			 */
+			'size'		: 4000,
+			
+			/* Whether this is a file or a directory. The two types are 'file' and 'dir'
+			 *
+			 * string
+			 */
+			'type'		: 'file',
+			
+			/* If this is a file, this will say what type of file it is, or it will be boolean false if it is a directory
+			 *
+			 * string / false (if directory)
+			 */
+			'fileType'	: 'image',
+			
+			/* The date as a string that you want associated with this item (creation date or modified date). Can be any
+			 * JavaScript-readable string that can be passed into the Date() constructor. 
+			 *
+			 * string
+			 */
+			'date'		: '2010-12-12 15:45:00'
 		},
 		{ ... } //more contents objects for the rest of the contents of the directory
 	]
