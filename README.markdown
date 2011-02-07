@@ -26,8 +26,17 @@ Your text input 'item_image' will be a filepicker. So how does it get the direct
 
 <pre>
 {
+	/* A boolean to determine if the directory call has succeeded or not
+	 *
+	 * bool
+	 */
 	'success' : true,
-	'contents': [ //an array
+	
+	/* This is an array of items in a directory. Each array spot is an object with the following properties
+	 *
+	 * array
+	 */
+	'contents': [
 		{
 			/* The name of the file or directory
 			 *
@@ -75,7 +84,16 @@ If the operation failed, filepicker expects this JSON result:
 
 <pre>
 {
+	/* A boolean to determine if the directory call has succeeded or not
+	 *
+	 * bool
+	 */
 	'success' 	: false,
+	
+	/* The error that has been give for the failure
+	 *
+	 * string
+	 */
 	'error'		: 'error string describing the error'
 }
 </pre>
