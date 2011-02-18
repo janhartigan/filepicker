@@ -90,7 +90,7 @@ If the operation failed, filepicker expects this JSON result:
 	 */
 	'success' 	: false,
 	
-	/* The error that has been give for the failure
+	/* The error that has been given for the failure
 	 *
 	 * string
 	 */
