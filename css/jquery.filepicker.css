@@ -39,13 +39,13 @@
 	background-color:#99adff;
 }
 .fp-file-item {
-	background:#fff url(16px-file.png) no-repeat 5px 6px;
+	background:#fff url(images/16px-file.png) no-repeat 5px 6px;
 }
 .fp-directory-item {
-	background:#fff url(16px-folder.png) no-repeat 5px 6px;
+	background:#fff url(images/16px-folder.png) no-repeat 5px 6px;
 }
 .fp-image-item {
-	background:#fff url(16px-image.png) no-repeat 5px 6px;
+	background:#fff url(images/16px-image.png) no-repeat 5px 6px;
 }
 .fp-directory-item-toggle {
 	
@@ -57,7 +57,7 @@
 	left:0;
 	right:0;
 	height:6px;
-	background:url(white-gradient-top.png) repeat-x;
+	background:url(images/white-gradient-top.png) repeat-x;
 }
 .fp-grad-bottom {
 	z-index:99999;
@@ -66,5 +66,5 @@
 	left:0;
 	right:0;
 	height:6px;
-	background:url(white-gradient-bottom.png) repeat-x;
+	background:url(images/white-gradient-bottom.png) repeat-x;
 }
