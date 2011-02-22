@@ -268,7 +268,6 @@
 				}
 			}
 			$(document).bind('keydown', function(e) {
-				console.log(e);
 				if (e.keyCode === 27) {
 					$(document).unbind('keydown');
 					self.destroy();
