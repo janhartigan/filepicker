@@ -461,7 +461,7 @@
 				}
 				
 				this.settings.afterSelectFile.call(this.$element, data);
-				
+				console.log(this.settings.closeOnSelectFile);
 				if (this.settings.closeOnSelectFile)
 					this.destroy();
 			} else if (data.type === 'dir') {
