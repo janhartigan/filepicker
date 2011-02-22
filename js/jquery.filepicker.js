@@ -267,6 +267,12 @@
 					this.destroyCallbackSet = true;
 				}
 			}
+			$(document).bind('keypress', function(e) {
+				if (e.keyCode === 27) {
+					$(document).unbind('keypress');
+					self.destroy();
+				}
+			})
 			
 			//load the original directory path
 			this.loadDirectoryPath('', this.$filepicker.find('.top-level-item'));
