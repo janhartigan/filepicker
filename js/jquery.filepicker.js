@@ -269,7 +269,7 @@
 			}
 			
 			//load the original directory path
-			this.loadDirectoryPath(this.settings.baseDirectory, this.$filepicker.find('.top-level-item'));
+			this.loadDirectoryPath('', this.$filepicker.find('.top-level-item'));
 			
 			//lastly run the onPostOpen function
 			if (typeof this.settings.onPostOpen == 'function') 
@@ -341,6 +341,7 @@
 		loadDirectoryPath: function(dir, $item) {
 			var self = this,
 				data = {
+					baseDirectory: this.settings.baseDirectory,
 					dir: dir
 				};
 			
@@ -381,16 +382,18 @@
 		 * @return string	'<ul class="fp-list"><...LIs...></ul>'
 		 */
 		buildItemList: function(items, dir) {
-			var directories = '',
+			var self = this,
+				directories = '',
 				files = '',
 				ulStyle = 'border-left: 15px solid ' + this.settings.nestedFolderPaddingColor;
 			
 			if (items.length) {
 				$.each(items, function(ind, el) {
 					var typeClass = 'fp-item',
+						path = el.path.indexOf(self.settings.baseDirectory) === 0 ? el.path.replace(self.settings.baseDirectory,'') : el.path;
 						commonInputs = 	'<input type="hidden" name="type" value="' + el.type + '" />' +
 										'<input type="hidden" name="name" value="' + el.name+ '" />' +
-										'<input type="hidden" name="path" value="' + el.path+ '" />';
+										'<input type="hidden" name="path" value="' + path+ '" />';
 					
 					if (el.type == 'file') {
 						//check to see what type of thing it is so that we can add an appropriate icon to the item
@@ -431,10 +434,11 @@
 		 */
 		itemClicked: function(element) {
 			var $item = $(element),
+				path = $item.find('input[name=path]').val(),
 				data = {
 					type	: $item.find('input[name=type]').val(),
 					name	: $item.find('input[name=name]').val(),
-					path	: $item.find('input[name=path]').val()
+					path	: this.settings.baseDirectory + path
 				};
 			
 			if (data.type === 'file') {
@@ -460,7 +464,7 @@
 				this.settings.beforeSelectFolder.call(this.$element, data);
 				
 				if (data.folderState == 'open')
-					this.loadDirectoryPath(data.path, $item);
+					this.loadDirectoryPath(path, $item);
 				else
 					this.clearDirectoryList($item);
 				
