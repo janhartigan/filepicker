@@ -267,9 +267,10 @@
 					this.destroyCallbackSet = true;
 				}
 			}
-			$(document).bind('keypress', function(e) {
+			$(document).bind('keydown', function(e) {
+				console.log(e);
 				if (e.keyCode === 27) {
-					$(document).unbind('keypress');
+					$(document).unbind('keydown');
 					self.destroy();
 				}
 			})
