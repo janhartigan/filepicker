@@ -116,7 +116,7 @@ You can do anything with the data passed into the callback functions. For exampl
 
 ## options
 
-These are the available settings and callback functions available for the plugin:
+These are the settings and callback functions available for the plugin:
 
 <pre>
 {	
