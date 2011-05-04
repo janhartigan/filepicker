@@ -61,7 +61,7 @@
 			/* If set to true, clicking a file opens a prompt
 			 * bool
 			 */
-			confirmSelection	: true,
+			confirmSelection	: false,
 			
 			/* If set to true, selecting a file closes the filePicker
 			 * bool
