@@ -73,8 +73,8 @@
 			 */
 			confirmText			: "Are you sure you want to select this file?",
 			
-			/*
-			 * Whether to align the filepicker to the left or the right edge of the clickable element
+			/* Whether to align the filepicker to the left or the right edge of the clickable element
+			 * string
 			 */
 			horizontalAlign		: 'right',
 			
