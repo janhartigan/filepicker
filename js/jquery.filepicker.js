@@ -11,6 +11,9 @@
 
 (function($){
 	
+	//the current element being worked on by the filepicker
+	var currentElement;
+	
 	//an array in which we will store all instances of our filePicker object
 	var filePickers = [];
 	
@@ -552,8 +555,10 @@
 	//extend the jQuery object 
 	$.fn.filePicker = function(options) {
 		return this.each(function() {
-			if (!checkIfActive(this)) {
+			if ( (this != currentElement) && !checkIfActive(this)) {
+				currentElement = this;
 				filePickers.push(new filePicker(this, options));
+				currentElement = '';
 			}
 		});
 	};
