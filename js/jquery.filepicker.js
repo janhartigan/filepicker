@@ -552,7 +552,9 @@
 	//extend the jQuery object 
 	$.fn.filePicker = function(options) {
 		return this.each(function() {
-			filePickers.push(new filePicker(this, options));
+			if (!checkIfActive(this)) {
+				filePickers.push(new filePicker(this, options));
+			}
 		});
 	};
 })(jQuery);
