@@ -6,7 +6,7 @@
  * supplied by the user.
  * 
  * @author Jan Hartigan
- * @version 0.1.0 (2010-12-25)
+ * @version 1.0.0 (2011-10-13)
  */
 
 (function($){
